@@ -1,0 +1,445 @@
+:root {
+    --ff-sans: "Josefin Sans", sans-serif;
+    --base-font: 1.6rem;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --img-bg: url("../images/bg-desktop-dark.jpg");
+    --clr-primary: hsl(0, 0%, 98%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-page-bg: hsl(235, 21%, 11%);
+    --clr-card-bg: hsla(235, 24%, 19%, 1);
+    --clr-card-bg-opac: hsla(235, 24%, 19%, 0.6);
+    --clr-blue: hsl(220, 98%, 61%);
+    --clr-green: hsl(192, 100%, 67%);
+    --clr-green-dark: hsl(125, 100%, 67%);
+    --clr-pink: hsl(280, 87%, 65%);
+    --clr-red: hsl(0, 87%, 65%);
+    --clr-orange: hsl(23, 87%, 65%);
+    --clr-gb-1: hsl(236, 33%, 92%);
+    --clr-gb-2: hsl(234, 39%, 75%);
+    --clr-gb-3: hsl(234, 11%, 52%);
+    --clr-gb-4: hsl(237, 12%, 36%);
+    --clr-gb-5: hsl(233, 14%, 35%);
+    --clr-gb-6: hsl(235, 19%, 24%);
+    --clr-box-shadow: hsl(0, 0%, 0%, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font: var(--fw-normal) var(--base-font) var(--ff-sans);
+    background: var(--clr-page-bg) var(--img-bg) no-repeat 0% 0% / 100vw 15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+img {
+    user-select: none;
+}
+
+a, li, p, h3, span {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+input{
+    outline: none;
+}
+
+button{
+    display: flex;
+}
+
+.open{
+    display: flex !important;
+}
+.close{
+    display: none !important;
+}
+
+#modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+}
+#form{
+    width: 400px;
+    height: 380px;
+    background: var(--clr-page-bg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-end;
+    border: 2px solid var(--clr-card-bg);
+    border-radius: 25px;
+    box-shadow: 0 20px 30px 10px var(--clr-gb-6);
+    position: relative;
+    column-gap: 25px;
+    row-gap: 20px;
+    padding-bottom: 20px;
+}
+#form label{
+    width: 345px;
+    min-height: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--clr-primary);
+}
+#form label:nth-child(1), #form label:nth-child(2){
+    width: 160px;
+}
+#form input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--clr-green);
+    border-radius: 10px;
+    padding-left: 10px;
+    color: var(--clr-green);
+}
+
+.btnSub{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    transition: .3s;
+    cursor: pointer;
+}
+.btnSub i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-green);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 36px;
+    transition: .3s;
+}
+.btnSub i:hover{
+    border: 2px solid;
+}
+
+#form span{
+    color: var(--clr-red);
+    font-size: 12px;
+    font-weight: bold;
+}
+.closeModal{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+}
+.closeModal i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--clr-red);
+    font-size: 20px;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+.closeModal i:hover{
+    border: 1px solid var(--clr-red);
+}
+header{
+    width: 1300px;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 410px;
+}
+#headerBtns{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#headerBtns button{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    align-items: center;justify-content: center;
+    cursor: pointer;
+}
+#headerBtns button i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+#headerBtns button:nth-child(1) i{
+    color: var(--clr-green-dark);
+}
+#headerBtns button:nth-child(2) i{
+    color: var(--clr-red);
+}
+#headerBtns button i:hover{
+    border: 1px solid;
+}
+header h3{
+    color: var(--clr-white);
+    font-size: 50px;
+}
+#cards{
+    width: 1300px;
+    min-height: 700px;
+    background-color: var(--clr-card-bg-opac);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
+    box-shadow: 0px 0px 10px black;
+}
+.card{
+    width: 413px;
+    min-height: 200px;
+    border-radius: 20px;
+    background-color: var(--clr-card-bg);
+    border: 2px solid #7c7c7c;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 5px;
+    z-index: 990;
+    box-shadow: 0 20px 20px 10px var(--clr-page-bg);
+}
+.card.dragging{
+    opacity: .5;
+}
+.userAdd{
+    width: 380px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 140px;
+}
+.userAdd span{
+    color: var(--clr-white);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.userAdd button{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: var(--clr-green);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.cardItemPlace{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.cardRow{
+    width: 90%;
+    min-height: 30px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999;
+}
+.cardRow.dragging{
+    opacity: .3;
+}
+.textTitle{
+    width: 85%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    position: relative;
+}
+.textTitle span{
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--clr-white);
+}
+.textTitle span:nth-child(1){
+    text-transform: capitalize;
+}
+.edit{
+    display: none;
+    width: 150px;
+    height: 20px;
+    background: none;
+    border: 1px solid transparent;
+    padding-left: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    color: var(--clr-green);
+}
+.cardBtns{
+    width: 35%;
+    height: 55px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+}
+.cardBtns button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+}
+.cardBtns button i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+.cardBtnsSave{
+    color: var(--clr-green-dark);
+}
+.cardBtnsEdit{
+    color: var(--clr-green);
+}
+.cardBtnsDel{
+    color: var(--clr-red);
+}
+
+.cardBtns button i:hover{
+    border: 1px solid;
+}
+.editDelete{
+    width: 13%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.editDelete i{
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.editDelete i:nth-child(1){
+    color: var(--clr-green-dark);
+}
+.editDelete i:nth-child(2){
+    color: var(--clr-orange);
+}
+.editDelete i:nth-child(3){
+    color: var(--clr-red);
+}
+.inputsAdd{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+.inputKey{
+    width: 30%;
+    height: 70%;
+    border: none;
+    border-bottom: 1px solid var(--clr-green);
+    border-right: 1px solid var(--clr-green);
+    font-size: 12px;
+    color: var(--clr-green);
+    font-family: 'Josefin Sans', sans-serif;
+    background: none;
+}
+.inputText{
+    width: 60%;
+    height: 70%;
+    border: none;
+    border-bottom: 1px solid var(--clr-green);
+    border-left: 1px solid var(--clr-green);
+    font-size: 12px;
+    color: var(--clr-green);
+    font-family: 'Josefin Sans', sans-serif;
+    background: none;
+    padding-left: 5px;
+}
+.inputsAdd i{
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--clr-green-dark);
+}
